@@ -10,7 +10,7 @@ import reportWebVitals from './reportWebVitals';
 import Products from './pages/products';
 import Home from './pages/home';
 import Contact from './pages/contact';
-import Card from './pages/card';
+import Card from './pages/cart';
 import Whishlist from './pages/whishlist';
 import ProductDetails from './pages/product-details';
 

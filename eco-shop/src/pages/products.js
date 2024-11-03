@@ -1,6 +1,6 @@
-import CardPreview from "../components/card-preview";
+import CartPreview from "../components/cart-preview";
 import CategorySidebar from "../components/categorySidebar";
-import ProductCard from "../components/product-card";
+import ProductCart from "../components/product-cart";
 import useFetchData from "../hooks/useFetchData";
 
 export default function Products() {
@@ -13,7 +13,7 @@ export default function Products() {
     <div className="bg-green-50 flex-1 mt-1">
       <div className="grid grid-cols-1 lg:grid-cols-3 lg:mx-14 gap-4">
         <div className="order-2 lg:order-1 lg:col-span-1 space-y-2 my-14">
-          <CardPreview />
+          <CartPreview />
           <CategorySidebar />
         </div>
 
@@ -32,7 +32,7 @@ export default function Products() {
           <div className="mx-auto max-w-2xl px-4 py-6 sm:px-6 sm:py-4 lg:max-w-7xl lg:px-8">
             <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-3 xl:gap-x-8">
               {products.map((product) => (
-                <ProductCard key={product.id} product={product} />
+                <ProductCart key={product.id} product={product} />
               ))}
             </div>
           </div>

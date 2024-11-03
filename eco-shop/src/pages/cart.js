@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Card() {
+export default function Cart() {
   return (
     <div className="p-8 lg:mx-14">
       {/* Cart Table */}

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function CardPreview() {
+export default function CartPreview() {
   return (
     <div className="bg-white shadow py-4 px-6">
       <h2 className="text-2xl font-bold text-green-700 my-4">Panier</h2>

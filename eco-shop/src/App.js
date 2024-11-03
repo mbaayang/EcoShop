@@ -1,14 +1,15 @@
 import FooterComponent from "./components/footer";
 import Header from "./components/header";
 import { Outlet } from "react-router-dom";
+import  { WishlistProvider } from "./context/wishlistContext";
 
 function App() {
   return (
-    <>
-    <Header />
-    <Outlet />
-    <FooterComponent/>
-    </>
+    <WishlistProvider>
+      <Header />
+      <Outlet />
+      <FooterComponent/>
+    </WishlistProvider>
   );
 }
 

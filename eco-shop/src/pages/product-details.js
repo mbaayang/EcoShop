@@ -1,35 +1,38 @@
 import { useState } from "react";
+import { useParams } from "react-router-dom";
+import useFetchData from "../hooks/useFetchData";
 
-export default function ProductDetails({ product }) {
+export default function ProductDetails() {
+  const { id } = useParams();
   const [quantity, setQuantity] = useState(1);
 
+  const { data: products, loading, error } = useFetchData("/products.json");
+  const product = products.find((item) => item.id === parseInt(id));
+
+  if (loading) return <p className="text-center text-2xl my-8">Chargement du produit...</p>;
+  if (error) return <p>{error}</p>;
+
+  if (!product) {
+    return <p className="text-center text-2xl my-8">Produit non trouvé !</p>;
+  }
+
   return (
-    <div className="bg-white py-8 px-4 sm:px-6 lg:px-8 lg:py-16">
-      <div className="lg:flex lg:items-start lg:gap-8">
+    <div className="bg-green-50 flex flex-col items-center w-full mt-1 py-8 px-4 sm:px-6 lg:px-8 lg:py-16">
+      <div className="w-4/5 lg:flex lg:items-start lg:gap-8">
         {/* Product Image */}
         <div className="lg:w-1/2">
           <img
-            src={product.imageSrc}
-            alt={product.imageAlt}
+            src={product.image_url} 
+            alt={product.name}
             className="w-full h-full object-cover rounded-lg shadow-lg"
           />
-          <div className="flex mt-4 space-x-2">
-            {product.additionalImages.map((img, index) => (
-              <img
-                key={index}
-                src={img}
-                alt={`${product.name} thumbnail ${index + 1}`}
-                className="w-20 h-20 object-cover rounded-lg border border-gray-200 hover:border-green-500"
-              />
-            ))}
-          </div>
         </div>
 
         {/* Product Info */}
         <div className="mt-8 lg:mt-0 lg:w-1/2">
           <h1 className="text-3xl font-bold text-gray-900">{product.name}</h1>
           <p className="text-xl font-semibold text-green-700 mt-2">
-            {product.price} €
+            {product.price} {product.currency}
           </p>
           <p className="mt-4 text-gray-700">{product.description}</p>
 
@@ -47,7 +50,7 @@ export default function ProductDetails({ product }) {
 
           {/* Add to Cart Button */}
           <button
-            onClick={() => console.log("Added to cart")}
+            onClick={() => console.log("Ajouté au panier")}
             className="mt-6 flex w-full items-center justify-center px-6 py-3 text-white font-semibold bg-green-600 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
           >
             Ajouter au panier
@@ -58,8 +61,10 @@ export default function ProductDetails({ product }) {
             <h2 className="text-lg font-bold text-gray-900">Détails du produit</h2>
             <ul className="mt-4 list-disc list-inside text-gray-700 space-y-2">
               <li>Catégorie : {product.category}</li>
-              <li>État : {product.condition}</li>
-              <li>Stock : {product.stock > 0 ? "En stock" : "Rupture"}</li>
+              <li>Taille : {product.size} {product.unit}</li>
+              <li>SKU : {product.sku}</li>
+              <li>Stock : {product.stock_quantity > 0 ? "En stock" : "Rupture"}</li>
+              <li>Ingrédients : {product.ingrédients.join(", ")}</li>
             </ul>
           </div>
         </div>

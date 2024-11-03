@@ -12,6 +12,7 @@
     "unit": "ml",
     "sku": "SHMP-SLD-001",
     "image_url": "/imgProduits/shampooing-solide-naturel.jpg",
+    "on_sale": true,
     "tags": [
       "cheveux",
       "shampooing",
@@ -37,6 +38,7 @@
     "unit": "ml",
     "sku": "DEO-NAT-002",
     "image_url": "/imgProduits/Déodorant-Naturel-en-Stick.jpg",
+    "on_sale": true,
     "tags": [
       "déodorant",
       "naturel",
@@ -62,6 +64,7 @@
     "unit": "ml",
     "sku": "CRM-VIS-003",
     "image_url": "/imgProduits/creme-hydratante-visage-bio.jpg",
+    "on_sale": true,
     "tags": [
       "crème hydratante",
       "bio",
@@ -87,6 +90,7 @@
     "unit": "g",
     "sku": "SVN-CHR-004",
     "image_url": "imgProduits/Savon-Artisanal-au-Charbon-Actif.jpg",
+    "on_sale": false,
     "tags": [
       "savon",
       "charbon actif",
@@ -112,6 +116,7 @@
     "unit": "ml",
     "sku": "HE-LVD-005",
     "image_url": "imgProduits/huile-essentielle-de-lavande.jpg",
+    "on_sale": false,
     "tags": [
       "huile essentielle",
       "lavande",

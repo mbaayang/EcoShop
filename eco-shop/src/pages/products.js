@@ -1,32 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CardPreview from "../components/card-preview";
 import CategorySidebar from "../components/categorySidebar";
 
-const products = [
-  {
-    id: 1,
-    name: "Basic Tee",
-    href: "#",
-    imageSrc:
-      "https://tailwindui.com/plus/img/ecommerce-images/product-page-01-related-product-01.jpg",
-    imageAlt: "Front of men's Basic Tee in black.",
-    price: "350 FCFA",
-    color: "Black",
-  },
-  {
-    id: 2,
-    name: "Basic Tee",
-    href: "#",
-    imageSrc:
-      "https://tailwindui.com/plus/img/ecommerce-images/product-page-01-related-product-01.jpg",
-    imageAlt: "Front of men's Basic Tee in black.",
-    price: "350 FCFA",
-    color: "Black",
-  },
-  // More products...
-];
-
 export default function Products() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("/products.json")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Erreur de chargement des produits");
+        }
+        return response.json();
+      })
+      .then((data) => setProducts(data))
+      .catch((error) => console.error(error));
+  }, []);
+
   return (
     <div className="bg-green-50 flex-1 mt-1">
       <div className="grid grid-cols-1 lg:grid-cols-3 lg:mx-14 gap-4">
@@ -69,21 +59,19 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className="group relative">
-      {/* Lien autour de l'image */}
       <a
-        href={product.href}
+        href="#"
         className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-green-50 lg:aspect-none lg:h-72 relative block"
       >
         <img
-          alt={product.imageAlt}
-          src={product.imageSrc}
+          alt={product.name}
+          src={product.image_url}
           className="h-full w-full object-cover object-center lg:h-full lg:w-full"
         />
       </a>
-      {/* Bouton wishlist */}
       <button
         onClick={toggleWishlist}
-        className="absolute top-2 right-2 bg-white bg-opacity-75 rounded-full p-2 text-orange-300 hover:text-orange-400 transition-colors z-10"
+        className="absolute top-2 right-2 bg-green-50 bg-opacity-75 rounded-full p-2 text-orange-300 hover:text-orange-400 transition-colors z-10"
       >
         {isWishlisted ? (
           <svg
@@ -118,9 +106,11 @@ const ProductCard = ({ product }) => {
       <div className="mt-4 flex justify-between">
         <div>
           <h3 className="text-sm text-gray-700">{product.name}</h3>
-          <p className="mt-1 text-sm text-gray-500">{product.color}</p>
+          <p className="mt-1 text-sm text-gray-500">{product.category}</p>
         </div>
-        <p className="text-sm font-medium text-gray-900">{product.price}</p>
+        <p className="text-sm font-medium text-gray-900">
+          {product.price} {product.currency}
+        </p>
       </div>
       <button className="mt-4 w-full bg-green-500 text-white py-2 rounded hover:bg-orange-400 transition-colors">
         Ajouter au panier

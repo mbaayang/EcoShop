@@ -1,4 +1,4 @@
-import ProductCart from "./product-cart";
+import ProductCard from "./product-card";
 import useFetchData from "../hooks/useFetchData";
 
 export default function Sale() {
@@ -16,7 +16,7 @@ export default function Sale() {
 
         <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-4 xl:gap-x-8">
           {promotionalProducts.map((product) => (
-            <ProductCart key={product.id} product={product} />
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </div>

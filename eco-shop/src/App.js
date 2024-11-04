@@ -2,13 +2,16 @@ import FooterComponent from "./components/footer";
 import Header from "./components/header";
 import { Outlet } from "react-router-dom";
 import  { WishlistProvider } from "./context/wishlistContext";
+import { CartProvider } from "./context/cartContext";
 
 function App() {
   return (
     <WishlistProvider>
-      <Header />
-      <Outlet />
-      <FooterComponent/>
+      <CartProvider>
+        <Header />
+        <Outlet />
+        <FooterComponent/>
+      </CartProvider>
     </WishlistProvider>
   );
 }

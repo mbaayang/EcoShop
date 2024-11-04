@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useCart } from "../context/cartContext";
 
 export default function Cart() {
+  const { cart, removeFromCart, updateQuantity } = useCart();
+
   return (
     <div className="p-8 lg:mx-14">
       {/* Cart Table */}
@@ -18,9 +21,12 @@ export default function Cart() {
             </tr>
           </thead>
           <tbody className="bg-green-50">
-            <tr className="border-b">
+            {cart.items.map((item) => (
+            <tr key={item.id} className="border-b">
               <td className="py-4 px-4">
-                <button className="bg-green-700 rounded-full text-white hover:bg-orange-400" title="Supprimer">
+                <button 
+                  onClick={() => removeFromCart(item.id)}
+                  className="bg-green-700 rounded-full text-white hover:bg-orange-400" title="Supprimer">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -33,24 +39,28 @@ export default function Cart() {
                 </button>
               </td>
               <td className="py-4 px-4">
+                <Link to={`/product/${item.id}`}>
                 <img
-                  src="https://example.com/image1.jpg"
-                  alt="Savon"
+                  src={item.image_url}
+                  alt={item.name}
                   className="w-12 h-12 rounded"
                 />
+                </Link>
               </td>
-              <td className="py-4 px-4">Savon de marseille</td>
-              <td className="py-4 px-4">400CFA</td>
+              <td className="py-4 px-4">{item.name}</td>
+              <td className="py-4 px-4">{item.price} {item.currency}</td>
               <td className="py-4 px-4">
                 <input
                   type="number"
-                  defaultValue="1"
+                  value={item.quantity}
                   min="1"
+                  onChange={(e) => updateQuantity(item.id, Number(e.target.value))}
                   className="w-16 text-center border border-gray-300 rounded"
                 />
               </td>
-              <td className="py-4 px-4">400CFA</td>
+              <td className="py-4 px-4">{item.price * item.quantity} {item.currency}</td>
             </tr>
+            ))}
           </tbody>
         </table>
       </div>
@@ -79,11 +89,11 @@ export default function Cart() {
           <div className="mt-4">
             <div className="flex justify-between py-2">
               <span>Sous-Total</span>
-              <span>1,900CFA</span>
+              <span>{cart.total} {cart.items[0]?.currency}</span>
             </div>
             <div className="flex justify-between py-2 border-t font-semibold">
               <span>Total</span>
-              <span>1,900CFA</span>
+              <span>{cart.total} {cart.items[0]?.currency}</span>
             </div>
           </div>
           <button className="w-full mt-4 bg-orange-400 text-white py-3 rounded hover:bg-orange-500">

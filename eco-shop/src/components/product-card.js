@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useCart } from "../context/cartContext";
 
-const ProductCart = ({ product }) => {
+const ProductCard = ({ product }) => {
+  const { addToCart } = useCart();
+  const [isAdded, setIsAdded] = useState(false);
   const [isWishlisted, setIsWishlisted] = useState(false);
 
   useEffect(() => {
@@ -23,6 +26,13 @@ const ProductCart = ({ product }) => {
       localStorage.setItem("wishlist", JSON.stringify(wishlist));
       setIsWishlisted(true);
     }
+  };
+
+  const handleAddToCart = () => {
+    addToCart(product);
+    setIsAdded(true);
+
+    setTimeout(() => setIsAdded(false), 6000);
   };
 
   return (
@@ -77,11 +87,28 @@ const ProductCart = ({ product }) => {
           {product.price} {product.currency}
         </p>
       </div>
-      <button className="mt-4 w-full bg-green-500 text-white py-2 rounded hover:bg-orange-400 transition-colors">
-        Ajouter au panier
+      <button
+        onClick={handleAddToCart}
+        className="mt-4 w-full bg-green-500 text-white py-2 rounded hover:bg-orange-400 transition-colors flex items-center justify-center"
+      >
+        {isAdded ? (
+          <>
+            <span>Ajouté au panier</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              className="w-6 h-6 ml-2"
+            >
+              <path d="M10 15.172l-3.59-3.59L5 12.414l5 5 9-9-1.414-1.414z" />
+            </svg>
+          </>
+        ) : (
+          "Ajouter au panier"
+        )}
       </button>
     </div>
   );
 };
 
-export default ProductCart;
+export default ProductCard;

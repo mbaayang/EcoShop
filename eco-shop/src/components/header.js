@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useCart } from "../context/cartContext";
 import userProfile from "../assets/user-profile.png";
 import logo from "../assets/EcoShop_logo.png";
 
@@ -7,6 +8,11 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const location = useLocation();
+
+  const { cart } = useCart();
+  console.log("Contenu du panier :", cart);
+
+  const itemCount = cart.items.reduce((total, item) => total + item.quantity, 0); 
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -121,11 +127,11 @@ export default function Header() {
           </div>
           {/* Right part */}
           <div className="flex items-center">
-            <div className="flex-shrink-0 space-x-2">
+            <div className="flex-shrink-0 space-x-3">
               {/* Cart button */}
               <button
                 type="button"
-                className="relative bg-green-50 p-1 rounded-full text-green-700 hover:text-green-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-800"
+                className="relative bg-green-50 p-1 rounded-full text-green-700 hover:text-green-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-800"
               >
                 <Link to="/card">
                   <span className="sr-only">Panier</span>
@@ -145,14 +151,14 @@ export default function Header() {
                   </svg>
                   {/* Badge */}
                   <span className="absolute -top-1.5 -right-1.5 inline-flex items-center justify-center w-5 h-5 px-1 py-1 text-[10px] font-bold leading-none text-white bg-orange-400 rounded-full">
-                    3
+                    {itemCount}
                   </span>
                 </Link>
               </button>
               {/* WishList button */}
               <button
                 type="button"
-                className="bg-green-50 p-1 rounded-full text-green-700 hover:text-green-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-800"
+                className="bg-green-50 p-1 rounded-full text-green-700 hover:text-green-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-800"
               >
                 <Link to="/wishlist">
                 <span className="sr-only">Liste d'envie</span>

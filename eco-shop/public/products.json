@@ -23,7 +23,8 @@
       "huile de coco",
       "argile verte",
       "huiles essentielles"
-    ]
+    ],
+    "date": "2024-10-01"
   },
   {
     "id": 2,
@@ -49,7 +50,8 @@
       "huile de coco",
       "beurre de karité",
       "huile essentielle de lavande"
-    ]
+    ],
+    "date": "2024-10-03"
   },
   {
     "id": 3,
@@ -75,7 +77,8 @@
       "beurre de karité",
       "huile de jojoba",
       "aloe vera"
-    ]
+    ],
+    "date": "2024-11-06"
   },
   {
     "id": 4,
@@ -101,7 +104,8 @@
       "huile d'olive",
       "charbon actif",
       "huile essentielle de menthe poivrée"
-    ]
+    ],
+    "date": "2024-11-06"
   },
   {
     "id": 5,
@@ -125,6 +129,7 @@
     ],
     "ingrédients": [
       "100% huile essentielle de lavande"
-    ]
+    ],
+    "date": "2024-11-08"
   }
 ]

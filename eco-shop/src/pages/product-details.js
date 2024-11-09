@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useFetchData from "../hooks/useFetchData";
 import { useCart } from "../context/cartContext";
 
@@ -17,7 +17,7 @@ export default function ProductDetails() {
   }
 
   const { data: products, loading, error } = useFetchData("/products.json");
-  const product = products.find((item) => item.id === parseInt(id));
+  const product = products ?  products.find((item) => item.id === parseInt(id)) : null;
 
   if (loading) return <p className="text-center text-2xl my-8">Chargement du produit...</p>;
   if (error) return <p>{error}</p>;
@@ -43,7 +43,9 @@ export default function ProductDetails() {
             </div>
             <p className="text-green-800 font-semi-bold"> Produit ajouté au panier !</p>
           </div>
-          <button className="lg:px-6 px-2 py-2 text-white font-semibold bg-green-600 hover:bg-orange-400">Voir le panier</button>
+          <button className="lg:px-6 px-2 py-2 text-white font-semibold bg-green-600 hover:bg-orange-400">
+            <Link to="/cart">Voir le panier</Link>
+          </button>
         </div>
       )}
       <div className="w-4/5 lg:flex lg:items-start lg:gap-8">

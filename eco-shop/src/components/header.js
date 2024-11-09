@@ -10,7 +10,6 @@ export default function Header() {
   const location = useLocation();
 
   const { cart } = useCart();
-  console.log("Contenu du panier :", cart);
 
   const itemCount = cart.items.reduce((total, item) => total + item.quantity, 0); 
 
@@ -77,16 +76,20 @@ export default function Header() {
             </div>
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
-              <img
-                className="block lg:hidden h-28 w-auto"
-                src={logo}
-                alt="logo"
-              />
-              <img
-                className="hidden lg:block h-40 w-auto"
-                src={logo}
-                alt="Workflow"
-              />
+              <Link to="/">
+                <img
+                  className="block lg:hidden h-28 w-auto"
+                  src={logo}
+                  alt="logo"
+                />
+              </Link>
+              <Link to="/">
+                <img
+                  className="hidden lg:block h-40 w-auto"
+                  src={logo}
+                  alt="Workflow"
+                />
+              </Link>
             </div>
             {/* Desktop Menu */}
             <div className="hidden md:ml-6 md:flex md:space-x-8">
@@ -131,6 +134,7 @@ export default function Header() {
               {/* Cart button */}
               <button
                 type="button"
+                title="Panier"
                 className="relative bg-green-50 p-1 rounded-full text-green-700 hover:text-green-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-800"
               >
                 <Link to="/card">
@@ -158,6 +162,7 @@ export default function Header() {
               {/* WishList button */}
               <button
                 type="button"
+                title="Liste d'envie"
                 className="bg-green-50 p-1 rounded-full text-green-700 hover:text-green-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-800"
               >
                 <Link to="/wishlist">

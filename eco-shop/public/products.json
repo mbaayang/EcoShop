@@ -1,0 +1,135 @@
+[
+  {
+    "id": 1,
+    "name": "Shampooing Solide Naturel",
+    "description": "Un shampooing solide 100% naturel, fait à la main, qui prend soin de vos cheveux tout en respectant l'environnement.",
+    "short_description": "Shampooing solide bio et écologique.",
+    "price": 2500,
+    "currency": "FCFA",
+    "category": "Cosmétiques",
+    "stock_quantity": 50,
+    "size": 250,
+    "unit": "ml",
+    "sku": "SHMP-SLD-001",
+    "image_url": "/imgProduits/shampooing-solide-naturel.jpg",
+    "on_sale": true,
+    "tags": [
+      "cheveux",
+      "shampooing",
+      "solide",
+      "écologique"
+    ],
+    "ingrédients": [
+      "huile de coco",
+      "argile verte",
+      "huiles essentielles"
+    ],
+    "date": "2024-10-01"
+  },
+  {
+    "id": 2,
+    "name": "Déodorant Naturel en Stick",
+    "description": "Déodorant en stick, fabriqué à partir d'ingrédients naturels et sans aluminium. Convient aux peaux sensibles.",
+    "short_description": "Déodorant sans aluminium, pour peau sensible.",
+    "price": 3000,
+    "currency": "FCFA",
+    "category": "Hygiène",
+    "stock_quantity": 120,
+    "size": 50,
+    "unit": "ml",
+    "sku": "DEO-NAT-002",
+    "image_url": "/imgProduits/Déodorant-Naturel-en-Stick.jpg",
+    "on_sale": true,
+    "tags": [
+      "déodorant",
+      "naturel",
+      "sans aluminium",
+      "écologique"
+    ],
+    "ingrédients": [
+      "huile de coco",
+      "beurre de karité",
+      "huile essentielle de lavande"
+    ],
+    "date": "2024-10-03"
+  },
+  {
+    "id": 3,
+    "name": "Crème Hydratante Visage Bio",
+    "description": "Une crème hydratante riche et naturelle pour nourrir la peau en profondeur, sans produits chimiques nocifs.",
+    "short_description": "Crème visage hydratante bio et naturelle.",
+    "price": 8000,
+    "currency": "FCFA",
+    "category": "Soin du visage",
+    "stock_quantity": 75,
+    "size": 50,
+    "unit": "ml",
+    "sku": "CRM-VIS-003",
+    "image_url": "/imgProduits/creme-hydratante-visage-bio.jpg",
+    "on_sale": true,
+    "tags": [
+      "crème hydratante",
+      "bio",
+      "visage",
+      "soin"
+    ],
+    "ingrédients": [
+      "beurre de karité",
+      "huile de jojoba",
+      "aloe vera"
+    ],
+    "date": "2024-11-06"
+  },
+  {
+    "id": 4,
+    "name": "Savon Artisanal au Charbon Actif",
+    "description": "Savon naturel artisanal au charbon actif, parfait pour purifier la peau en douceur.",
+    "short_description": "Savon purifiant au charbon actif.",
+    "price": 1500,
+    "currency": "FCFA",
+    "category": "Hygiène",
+    "stock_quantity": 150,
+    "size": 100,
+    "unit": "g",
+    "sku": "SVN-CHR-004",
+    "image_url": "imgProduits/Savon-Artisanal-au-Charbon-Actif.jpg",
+    "on_sale": false,
+    "tags": [
+      "savon",
+      "charbon actif",
+      "artisanal",
+      "purifiant"
+    ],
+    "ingrédients": [
+      "huile d'olive",
+      "charbon actif",
+      "huile essentielle de menthe poivrée"
+    ],
+    "date": "2024-11-06"
+  },
+  {
+    "id": 5,
+    "name": "Huile Essentielle de Lavande",
+    "description": "Huile essentielle pure de lavande, idéale pour l’aromathérapie et les soins de la peau.",
+    "short_description": "Huile essentielle pure de lavande bio.",
+    "price": 6500,
+    "currency": "FCFA",
+    "category": "Huiles essentielles",
+    "stock_quantity": 200,
+    "size": 10,
+    "unit": "ml",
+    "sku": "HE-LVD-005",
+    "image_url": "imgProduits/huile-essentielle-de-lavande.jpg",
+    "on_sale": false,
+    "tags": [
+      "huile essentielle",
+      "lavande",
+      "bio",
+      "aromathérapie"
+    ],
+    "ingrédients": [
+      "100% huile essentielle de lavande"
+    ],
+    "date": "2024-11-08"
+  }
+]

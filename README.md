@@ -9,6 +9,7 @@
 - **Page d'accueil** : Présentation des produits phares, des offres promotionnelles et des catégories principales.
 - **Page produit** : Affichage détaillé des produits avec description, prix, et options d'ajout au panier.
 - **Panier** : Gestion des articles ajoutés avec possibilité de mise à jour des quantités ou de suppression.
+- **Wishlist** : Enregistrement des produits favoris pour un achat ultérieur.
 - **Formulaire de contact** : Formulaire permettant aux utilisateurs de poser des questions ou d'envoyer des retours d'expérience.
 
 ## Technologies utilisées
@@ -18,8 +19,6 @@
 - **Axios** : Requêtes HTTP pour interagir avec l'API de l'application.
 - **CSS3 / SCSS** : Pour la stylisation de l'interface utilisateur.
 - **Tailwind CSS/UI** : Framework CSS pour des composants rapides et réactifs.
-- **Node.js & Express (Backend)** : API pour la gestion des produits et des utilisateurs (à intégrer si applicable).
-- **MongoDB** : Base de données pour la gestion des produits et des utilisateurs (à intégrer si applicable).
 
 ## Prérequis
 
@@ -49,5 +48,5 @@ Suivez les étapes ci-dessous pour installer et exécuter le projet en local :
 ## Structure du projet
 
 /src
-  /components   # Composants réutilisables (header, footer, etc.)
-  /pages        # Pages principales (Accueil, Produit, Panier, Contact)
+  /components   # Composants réutilisables (header, footer, productCard, etc.)
+  /pages        # Pages principales (Accueil, Produit, Panier, Wishlist, Contact)

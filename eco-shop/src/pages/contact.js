@@ -6,10 +6,10 @@ export default function Contact() {
 
   return (
     <div className="flex place-content-center justify-center bg-green-50 py-8 mt-1">
-    <form onSubmit={handleSubmit()} className="w-3/5 bg-white px-8 py-4 rounded-lg">
+    <form onSubmit={handleSubmit()} className="lg:w-3/5 w-4/5 bg-white px-8 py-4 rounded-lg">
       <div className="space-y-12">
         <div className="border-b border-gray-900/10 pb-12">
-          <h1 className="text-base/7 font-semibold text-green-700">
+          <h1 className="text-base/7 lg:text-3xl font-semibold text-green-700">
             N'hesitez pas à nous écrire
           </h1>
           <p className="mt-1 text-sm/6 text-gray-600">

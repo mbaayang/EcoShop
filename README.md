@@ -51,3 +51,7 @@ Suivez les étapes ci-dessous pour installer et exécuter le projet en local :
 /src
   /components   # Composants réutilisables (header, footer, etc.)
   /pages        # Pages principales (Accueil, Produit, Panier, Contact)
+
+## Deployment
+
+    Lien de déploiement : [EcoShop](https://eco-shop-murex.vercel.app/)

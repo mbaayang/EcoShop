@@ -13,17 +13,17 @@ export default function Cart() {
           <thead>
             <tr className="bg-green-700 text-white">
               <th className="py-3 px-4"> </th>
-              <th className="py-3 px-4"> </th>
+              <th className="py-3 px-4 text-left"> Image </th>
               <th className="py-3 px-4 text-left">Produit</th>
-              <th className="py-3 px-4  text-left">Prix</th>
-              <th className="py-3 px-4  text-left">Quantité</th>
-              <th className="py-3 px-4  text-left">Sous-Total</th>
+              <th className="py-3 px-4 text-left">Prix</th>
+              <th className="py-3 px-4 text-left">Quantité</th>
+              <th className="py-3 px-4 text-left">Sous-Total</th>
             </tr>
           </thead>
           <tbody className="bg-green-50">
             {cart.items.map((item) => (
             <tr key={item.id} className="border-b">
-              <td className="py-4 px-4">
+              <td className="py-2 px-4">
                 <button 
                   onClick={() => removeFromCart(item.id)}
                   className="bg-green-700 rounded-full text-white hover:bg-orange-400" title="Supprimer">
@@ -38,7 +38,7 @@ export default function Cart() {
                   </svg>
                 </button>
               </td>
-              <td className="py-4 px-4">
+              <td className="py-2 px-4">
                 <Link to={`/product/${item.id}`}>
                 <img
                   src={item.image_url}
@@ -47,18 +47,18 @@ export default function Cart() {
                 />
                 </Link>
               </td>
-              <td className="py-4 px-4">{item.name}</td>
-              <td className="py-4 px-4">{item.price} {item.currency}</td>
-              <td className="py-4 px-4">
+              <td className="py-2 px-4">{item.name}</td>
+              <td className="py-2 px-4">{item.price} {item.currency}</td>
+              <td className="py-2 px-4">
                 <input
                   type="number"
                   value={item.quantity}
                   min="1"
                   onChange={(e) => updateQuantity(item.id, Number(e.target.value))}
-                  className="w-16 text-center border border-gray-300 rounded"
+                  className="w-16 text-center border border-gray-300 rounded focus:border-green-500 focus:ring focus:ring-green-300"
                 />
               </td>
-              <td className="py-4 px-4">{item.price * item.quantity} {item.currency}</td>
+              <td className="py-2 px-4">{item.price * item.quantity} {item.currency}</td>
             </tr>
             ))}
           </tbody>

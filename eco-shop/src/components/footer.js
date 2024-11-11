@@ -1,8 +1,8 @@
 import { Footer } from "flowbite-react";
 import {
-  BsFacebook,
-  BsInstagram,
-  BsTwitter,
+  BsLinkedin,
+  BsGithub,
+  BsMailbox2,
 } from "react-icons/bs";
 import logo from '../assets/EcoShop_logo.png'
 
@@ -23,15 +23,15 @@ export default function FooterComponent() {
             <div>
               <Footer.Title title="À Propos" />
               <Footer.LinkGroup col>
-                <Footer.Link href="#">EcoShop</Footer.Link>
-                <Footer.Link href="#">Écologie</Footer.Link>
+                <Footer.Link href="/">EcoShop</Footer.Link>
+                <Footer.Link href="/">Écologie</Footer.Link>
               </Footer.LinkGroup>
             </div>
             <div>
-              <Footer.Title title="Suivez nous" />
+              <Footer.Title title="Réseaux Sociaux" />
               <Footer.LinkGroup col>
-                <Footer.Link href="#">Facebook</Footer.Link>
-                <Footer.Link href="#">Instagram</Footer.Link>
+                <Footer.Link href="https://www.linkedin.com/in/mbayang-gueye-508093233/">Linkedin</Footer.Link>
+                <Footer.Link href="https://github.com/mbaayang">Github</Footer.Link>
               </Footer.LinkGroup>
             </div>
             <div>
@@ -47,9 +47,9 @@ export default function FooterComponent() {
         <div className="w-full sm:flex sm:items-center sm:justify-between">
           <Footer.Copyright href="#" by="EcoSHop Mbayang Gueye™" year={2024} />
           <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
-            <Footer.Icon href="#" icon={BsFacebook} />
-            <Footer.Icon href="#" icon={BsInstagram} />
-            <Footer.Icon href="#" icon={BsTwitter} />
+            <Footer.Icon href="https://www.linkedin.com/in/mbayang-gueye-508093233/" target="blank" icon={BsLinkedin} />
+            <Footer.Icon href="https://github.com/mbaayang" target="blank" icon={BsGithub} />
+            <Footer.Icon href="mailto:mbayangueye07@gmail.com" target="blank" icon={BsMailbox2} />
           </div>
         </div>
       </div>

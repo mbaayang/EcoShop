@@ -56,3 +56,4 @@ Suivez les étapes ci-dessous pour installer et exécuter le projet en local :
 ## Deployment
 
     Lien de déploiement : [EcoShop](https://eco-shop-murex.vercel.app/)
+    Lien de déploiement : [Portofolio](https://eco-shop-portofolio.vercel.app/)

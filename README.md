@@ -9,6 +9,7 @@
 - **Page d'accueil** : Présentation des produits phares, des offres promotionnelles et des catégories principales.
 - **Page produit** : Affichage détaillé des produits avec description, prix, et options d'ajout au panier.
 - **Panier** : Gestion des articles ajoutés avec possibilité de mise à jour des quantités ou de suppression.
+- **Liste de souhaits** : Enregistrement des produits favoris pour un achat ultérieur.
 - **Formulaire de contact** : Formulaire permettant aux utilisateurs de poser des questions ou d'envoyer des retours d'expérience.
 
 ## Technologies utilisées
